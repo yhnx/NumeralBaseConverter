@@ -1,0 +1,72 @@
+"""Numeral Base Convertor 
+---------------------------------------------------
+"""
+print("Hey there, Welcome to Numeral Base Convertor by yhnx \nThis converts:  \n*Binary-Decimal/Decimal-Binary, \n*Binary-Octal/Octal-Binary, \n*Decimal-Octal/Octal-Decimal, \n*Decimal-Hexadecimal/Hexadecimal-Decimal, \n*Octal-Hexadecimal/Hexadecimal-Octal, \n*Binary-Hexadecimal/Hexadecimal-Binary.")
+play_con="YES"
+while play_con=="YES":
+  conv_from=input("Choose converting numeric base ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+  while not conv_from=="D" and not conv_from=="B" and not conv_from=="O" and not conv_from=="H":
+    print("*INVALID INPUT* \nPlease enter D for Decimal, B for Binary, O for Octal and H for Hexadecimal")
+    conv_from=input("Choose converting numeric base ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+  conv_to=input("Choose  numeric base to be converted ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+  while not conv_to=="D" and not conv_to=="B" and not conv_to=="O" and not conv_to=="H":
+    print("*INVALID INPUT*", "Please enter D for decimal, B for binary, O for octal")
+    conv_to=input("Choose  numeric base to be converted ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+  while conv_from=="B" and conv_to=="B" or conv_from=="D" and conv_to=="D" or conv_from=="O" and conv_to=="O" or conv_from=="H" and conv_to=="H":
+    print("*INVALID INPUT* \nWe dont think youll our program to convert to the same base, You've already done it \nPlease choose wisely")
+    conv_from=input("Choose converting numeric base ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+    while not conv_from=="D" and not conv_from=="B" and not conv_from=="O" and not conv_from=="H":
+      print("*INVALID INPUT* \nPlease enter D for Decimal, B for Binary, O for Octal and H for Hexadecimal")
+      conv_from=input("Choose converting numeric base ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+    conv_to=input("Choose  numeric base to be converted ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+    while not conv_to=="D" and not conv_to=="B" and not conv_to=="O" and not conv_to=="H":
+      print("*INVALID INPUT*", "Please enter D for decimal, B for binary, O for octal")
+      conv_to=input("Choose  numeric base to be converted ([D]ecimal, [B]inary, [O]ctal and [H]exadecimal):")
+  if conv_from=="B" and conv_to=="D":
+    conv_num_b=input("Enter the binary value to be converted:")
+    conv_num_d=int(conv_num_b,2)
+    print("The decimal value is:", conv_num_d)
+  if conv_from=="D" and conv_to=="B":
+    conv_num_d=int(input("Enter the decimal value to be converted:"))
+    print("The binary value is:",bin(conv_num_d).replace("0b",""))  
+  if conv_from=="B" and conv_to=="O":
+    conv_num_b=input("Enter the binary value to be converted:")
+    conv_num_d=int(conv_num_b,2)
+    print("The octal value is:", oct(conv_num_d).replace("0o",""))
+  if conv_from=="O" and conv_to=="B":
+    conv_num_o=input("Enter the octal value to be converted:")
+    conv_num_d=int(conv_num,8)
+    print("The binary value is:",bin(conv_num_d).replace("0b",""))
+  if conv_from=="B" and conv_to=="H":
+    conv_num_b=input("Enter the binary value to be converted:")
+    conv_num_d=int(conv_num_b,2)
+    print("The hexadecimal value is:", hex(conv_num_d).replace("0x",""))  
+  if conv_from=="H" and conv_to=="B":
+    conv_num_h=input("Enter the hexadecimal value to be converted:")
+    conv_num_d=int(conv_num_h,16)
+    print("The binary value is:",bin(conv_num_d).replace("0b",""))
+  if conv_from=="D" and conv_to=="O":
+    conv_num_d=int(input("Enter the decimal value to be converted:"))
+    print("The octal value is:", oct(conv_num_d).replace("0o",""))
+  if conv_from=="O" and conv_to=="D":
+    conv_num_o=input("Enter the octal value to be converted:")
+    conv_num_d=int(conv_num_o,8)
+    print("The decimal value is:", conv_num_d)
+  if conv_from=="H" and conv_to=="D":
+    conv_num_h=input("Enter the hexadecimal value to be converted:")
+    print ("The decimal value is:", int(conv_num_h,16))
+  if conv_from=="D" and conv_to=="H":
+    conv_num_d=int(input("Enter decimal value to be converted:"))
+    print("The hexadecimal value is:",hex(conv_num_d).replace("0x",""))
+  if conv_from=="O" and conv_to=="H":   
+    conv_num_o=input("Enter the octal value to be converted:")
+    conv_num_d=int(conv_num_o,8)
+    print("The hexadecimal value is:",hex(conv_num_d).replace("0x",""))
+  if conv_from=="H" and conv_to=="O": 
+    conv_num_h=input("Enter the hexadecimal value to be converted:")
+    conv_num_d=int(conv_num_h,16)
+    print("The octal value is:",oct(conv_num_d).replace("0o",""))
+    
+  play_con=input("Do you want to convert more numbers? (YES/NO)")
+print(".......................CONVERTOR CLOSING.....................") 
+input() 
